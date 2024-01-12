@@ -28,7 +28,6 @@ country_total = df[['continent'
 
 print(country_total.head())
 
-
 # Remove the continents as locations for new cases/deaths df
 country_minus_continents_new = country_over_time[~country_over_time.continent.isnull()]
 # Testing: print(country_minus_continents_new[country_minus_continents_new.location == 'Afghanistan'])
