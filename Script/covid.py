@@ -31,7 +31,8 @@ print(country_total.head())
 
 # Remove the continents as locations for new cases/deaths df
 country_minus_continents_new = country_over_time[~country_over_time.continent.isnull()]
-# Testing: print(country_minus_continents[country_minus_continents.location == 'Africa'])
+# Testing: print(country_minus_continents_new[country_minus_continents_new.location == 'Afghanistan'])
+# Testing: print(country_minus_continents_new[country_minus_continents_new.location == 'Africa'])
 
 # Create table with just new cases with NULLS removed
 new_cases = country_over_time.drop('new_deaths', axis=1) # Dropping column as not needed. Axis=1 refers to columns. If was 0, then it would refer to rows.
@@ -45,7 +46,8 @@ print(new_deaths_no_nulls.head())
 
 # Remove the continents as locations for total cases/deaths df
 country_minus_continents_total = country_total[~country_total.continent.isnull()]
-# Testing: print(country_minus_continents[country_minus_continents.location == 'Africa'])
+# Testing: print(country_minus_continents_total[country_minus_continents_total.location == 'Afghanistan'])
+# Testing: print(country_minus_continents_total[country_minus_continents_total.location == 'Africa'])
 
 # Want to get max total cases so only one row for each country
 total_cases_no_nulls = country_minus_continents_total[~country_minus_continents_total.total_cases.isnull()] 
