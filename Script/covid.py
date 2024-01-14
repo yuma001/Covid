@@ -34,12 +34,12 @@ country_minus_continents_new = country_over_time[~country_over_time.continent.is
 # Testing: print(country_minus_continents_new[country_minus_continents_new.location == 'Africa'])
 
 # Create table with just new cases with NULLS removed
-new_cases = country_over_time.drop('new_deaths', axis=1) # Dropping column as not needed. Axis=1 refers to columns. If was 0, then it would refer to rows.
+new_cases = country_minus_continents_new.drop('new_deaths', axis=1) # Dropping column as not needed. Axis=1 refers to columns. If was 0, then it would refer to rows.
 new_cases_no_nulls = new_cases[~new_cases.new_cases.isnull()] # Remove nulls
 print(new_cases_no_nulls.head())
 
 # Create table with just new deaths with NULLS removed
-new_deaths = country_over_time.drop('new_cases', axis=1) 
+new_deaths = country_minus_continents_new.drop('new_cases', axis=1) 
 new_deaths_no_nulls = new_deaths[~new_deaths.new_deaths.isnull()] 
 print(new_deaths_no_nulls.head())
 
